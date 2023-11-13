@@ -1,5 +1,14 @@
-// Цей код відкриває меню при натисканні на кнопку
+document.addEventListener('DOMContentLoaded', function () {
+  const themeToggle = document.getElementById('theme-toggle');
+  const body = document.body;
 
-document.querySelector(".btn").addEventListener("click", function() {
-  document.querySelector("nav").classList.toggle("active");
+  themeToggle.addEventListener('change', function () {
+      if (themeToggle.checked) {
+          body.classList.remove('light-theme');
+          body.classList.add('dark-theme');
+      } else {
+          body.classList.remove('dark-theme');
+          body.classList.add('light-theme');
+      }
+  });
 });
