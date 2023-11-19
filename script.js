@@ -1,14 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
+const toggle = document.getElementById('toggleDark');
+const body = document.querySelector('body');
 
-  themeToggle.addEventListener('change', function () {
-      if (themeToggle.checked) {
-          body.classList.remove('light-theme');
-          body.classList.add('dark-theme');
-      } else {
-          body.classList.remove('dark-theme');
-          body.classList.add('light-theme');
-      }
-  });
+toggle.addEventListener('click', function(){
+    this.classList.toggle('bi-moon');
+    if(this.classList.toggle('bi-brightness-high-fill')){
+        body.style.background = 'white';
+        body.style.color = 'black';
+        body.style.transition = '2s';
+    }else{
+        body.style.background = 'black';
+        body.style.color = 'white';
+        body.style.transition = '2s';
+    }
 });
